@@ -8,9 +8,9 @@ import android.text.TextUtils;
 
 public class News {
 
-        private String title;
-        private String url;
-        private String section;
+    private String title;
+    private String url;
+    private String section;
 
     public News() {
     }

@@ -9,13 +9,10 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private static final String url = "https://content.guardianapis.com/search";
-     private NewsAdapter Adapter;
+    private NewsAdapter Adapter;
     private TextView EmptyTextView;
 
     @Override
@@ -36,11 +33,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Adapter = new NewsAdapter(this, new ArrayList<News>());
         ListView List = (ListView) findViewById(R.id.listview);
         List.setAdapter(Adapter);
-       List.setEmptyView(EmptyTextView);
+        List.setEmptyView(EmptyTextView);
 
         populateList();
 
-         List.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        List.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 News current = Adapter.getItem(position);
@@ -62,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             EmptyTextView.setText(R.string.checkinternet);
         }
     }
-
-
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
         Uri UUri = Uri.parse(url);
@@ -72,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         builder.appendQueryParameter("api-key", "test");
         return new NewsLoader(this, builder.toString());
     }
-
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
         Adapter.clear();
