@@ -115,14 +115,10 @@ public class QueryUtils {
                 String title = currentjson.getString("webTitle");
                 String section = "";
                 if (currentjson.has("sectionName"))
-
                     section = currentjson.getString("sectionName");
-                String data = currentjson.getString("webPublicationDate");
-
                 String url = currentjson.getString("webUrl");
 
-
-                News mNews = new News(title, data, section, url, data);
+                News mNews = new News(title, section, url);
                 news.add(mNews);
             }
         } catch (JSONException e) {
