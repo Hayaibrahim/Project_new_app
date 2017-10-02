@@ -11,6 +11,23 @@ public class News {
     private String title;
     private String url;
     private String section;
+    private String date;
+    private String athor;
+
+    public News(String title, String url, String section, String date) {
+        this.title = title;
+        this.url = url;
+        this.section = section;
+        this.date = date;
+    }
+
+    public News(String title, String url, String section, String date, String athor) {
+        this.title = title;
+        this.url = url;
+        this.section = section;
+        this.date = date;
+        this.athor = athor;
+    }
 
     public News() {
     }
@@ -19,6 +36,14 @@ public class News {
         this.title = title;
         this.section = section;
         this.url = url;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getAthor() {
+        return athor;
     }
 
     public String getTitle() {

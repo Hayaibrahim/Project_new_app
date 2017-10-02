@@ -34,10 +34,10 @@ public class QueryUtils {
         try {
             jsonResponse = HttpRequest(url);
         } catch (IOException e) {
-            Log.e(LOG_TAG, " you have Problem'HTTP' ", e);
+            Log.e(LOG_TAG, " you have Problem  'HTTP' ", e);
         }
-        List<News> mlist = extractInfoFromJson(jsonResponse);
-        return mlist;
+        List<News> mList = extractInfoFromJson(jsonResponse);
+        return mList;
     }
 
     private static URL createUrl(String stringUrl) {
@@ -115,10 +115,15 @@ public class QueryUtils {
                 String title = currentjson.getString("webTitle");
                 String section = "";
                 if (currentjson.has("sectionName"))
+
                     section = currentjson.getString("sectionName");
+                String data = currentjson.getString("webPublicationDate");
+
                 String url = currentjson.getString("webUrl");
-                News mnews = new News(title, section, url);
-                news.add(mnews);
+
+
+                News mNews = new News(title, data, section, url, data);
+                news.add(mNews);
             }
         } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem parsing the JSON", e);

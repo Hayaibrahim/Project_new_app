@@ -17,4 +17,17 @@
         android:layout_height="wrap_content"
         tools:text="Section" />
 
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        tools:text="2017/20/07" />
+
+    <TextView
+        android:id="@+id/athor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text=" body" />
+
 </LinearLayout>

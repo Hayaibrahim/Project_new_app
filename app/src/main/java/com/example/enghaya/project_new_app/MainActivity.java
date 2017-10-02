@@ -19,7 +19,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
-    private static final String url = "https://content.guardianapis.com/search";
+    private static final String mUrl = "https://content.guardianapis.com/search";
     private NewsAdapter Adapter;
     private TextView EmptyTextView;
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-        Uri UUri = Uri.parse(url);
+        Uri UUri = Uri.parse(mUrl);
         Uri.Builder builder = UUri.buildUpon();
         builder.appendQueryParameter("q", "car");
         builder.appendQueryParameter("api-key", "test");
