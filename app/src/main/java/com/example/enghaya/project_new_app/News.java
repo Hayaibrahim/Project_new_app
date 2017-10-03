@@ -7,43 +7,29 @@ import android.text.TextUtils;
  */
 
 public class News {
-
     private String title;
     private String url;
     private String section;
     private String date;
-    private String athor;
+    private String athors;
 
-    public News(String title, String url, String section, String date) {
+
+    public News(String title, String section, String url, String data) {
         this.title = title;
         this.url = url;
         this.section = section;
         this.date = date;
-    }
-
-    public News(String title, String url, String section, String date, String athor) {
-        this.title = title;
-        this.url = url;
-        this.section = section;
-        this.date = date;
-        this.athor = athor;
     }
 
     public News() {
-    }
-
-    public News(String title, String section, String url) {
-        this.title = title;
-        this.section = section;
-        this.url = url;
     }
 
     public String getDate() {
         return date;
     }
 
-    public String getAthor() {
-        return athor;
+    public String getAthors() {
+        return athors;
     }
 
     public String getTitle() {
@@ -61,5 +47,3 @@ public class News {
         return section;
     }
 }
-
-

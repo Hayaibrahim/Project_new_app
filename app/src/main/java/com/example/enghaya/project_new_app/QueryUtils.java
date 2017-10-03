@@ -117,8 +117,9 @@ public class QueryUtils {
                 if (currentjson.has("sectionName"))
                     section = currentjson.getString("sectionName");
                 String url = currentjson.getString("webUrl");
-
-                News mNews = new News(title, section, url);
+                String data = currentjson.getString("webPublicationDate");
+                // String athors=  currentjson.getJSONObject("fields").getString("bodyText");
+                News mNews = new News(title, section, url, data);
                 news.add(mNews);
             }
         } catch (JSONException e) {

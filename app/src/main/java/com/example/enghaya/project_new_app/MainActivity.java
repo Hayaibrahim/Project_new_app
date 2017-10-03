@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             EmptyTextView.setText(R.string.checkinternet);
         }
     }
+
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
         Uri UUri = Uri.parse(mUrl);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         builder.appendQueryParameter("api-key", "test");
         return new NewsLoader(this, builder.toString());
     }
+
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
         Adapter.clear();

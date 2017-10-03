@@ -34,7 +34,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         title.setText(News.getTitle());
         sectionname.setText(News.getSection());
         data.setText(News.getDate());
-        athor.setText(News.getAthor());
+        athor.setText(News.getAthors());
 
 
         return list;
